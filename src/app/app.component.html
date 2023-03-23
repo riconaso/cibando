@@ -23,34 +23,21 @@
   </nav>
 </header>
 
-
-<ngb-carousel *ngIf="images.length >1">
-	<ng-template ngbSlide *ngFor="let image of images">
-		<div class="picsum-img-wrapper">
-			<img [src]="percorso + image.id + '.jpg'" [alt]="image.label" />
-		</div>
-		<div class="carousel-caption">
-			<h3>{{image.label}}</h3>
-		</div>
-	</ng-template>
-</ngb-carousel>
-
-<div *ngIf="images.length == 1" class="single-image">
-  <img [src]="percorso + images[0].id +'.jpg'" [alt]="images[0].label" />
-</div>
+<app-carousel></app-carousel>
 
 <div id="main-container">
   <div class="container-titolo">
-    <h2>App di esempio in Angular</h2>
-    <p class="paragrafo">Ecco un testo dentro al paragrafo</p>
+    <h2 [ngClass]="evidenziato ? 'testoEvidenziato' : '' " (click)="onEvidenziazione()" style="cursor: pointer;">Benvenuti in Cibando</h2>
+    <p class="paragrafo" [ngStyle]="{'background-color': evidenziato == true ? 'yellow' : 'white'}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, consequuntur corrupti iste voluptates omnis ex libero, consequatur quas accusantium, asperiores deserunt exercitationem maxime! Fugiat facilis voluptas animi atque sapiente dolores autem adipisci molestias optio nobis quasi deserunt cupiditate voluptatibus quo sed laudantium tenetur consequatur, possimus error itaque id tempora quia amet ut. Aliquam molestiae explicabo omnis molestias, exercitationem debitis ducimus at maxime expedita totam! Maxime, animi exercitationem? Cumque explicabo quisquam eaque est porro eum, alias facilis debitis tempora, voluptate dolor incidunt doloribus. Asperiores quod labore consequuntur velit dolor maxime repudiandae adipisci error laudantium? Necessitatibus illum vero tenetur illo temporibus, labore eveniet veritatis quisquam accusantium cum doloremque debitis incidunt commodi nostrum, tempore laudantium dolorum sapiente cupiditate corporis autem recusandae numquam nihil voluptatem. Aperiam dolorem esse animi. Quibusdam, voluptas labore optio neque sapiente laborum quisquam exercitationem hic a dolorem reiciendis eos totam quam, voluptatibus distinctio provident debitis ipsam nihil nam doloribus nulla tempore, nisi temporibus? Ullam amet qui porro assumenda reprehenderit quos asperiores repellendus eum saepe, tenetur et officia quis nam nobis. Quos modi ducimus deleniti, incidunt unde illo totam aliquid dolor voluptatibus illum velit labore laboriosam quo, obcaecati rem. Porro ab, veritatis illo maxime quod nostrum. Quis facilis error aperiam magnam!</p>
   </div>
 </div>
 
-<div id="contenitore-switch" [ngSwitch]="colore" >
+
+<!-- <div id="contenitore-switch" [ngSwitch]="colore" >
   <div *ngSwitchCase="'verde'"[style]="'background:' + colore">compare se il colore é VERDE </div>
   <div *ngSwitchCase="'blu'" [style]="'background:' + colore">compare se il colore é BLU</div>
   <div *ngSwitchCase="'rosso'"[style]="'background:' + colore">compare se il colore é ROSSO</div>
   <div *ngSwitchDefault style ="background-color: black;">compare se il colore non é stato scelto</div>
-</div>
+</div> -->
 
 <router-outlet></router-outlet>
