@@ -1,38 +1,6 @@
-<header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-red">
-    <div class="container-fluid">
-      <img src="../assets/images/icona-cibando.png" class="icona-cibando">
-      <a class="navbar-brand" href="#">Cibando</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#"><mat-icon>home</mat-icon>Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><mat-icon>restaurant</mat-icon>Ricette</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><mat-icon>contacts</mat-icon>Contatti</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<app-carousel></app-carousel>
-
-<div id="main-container">
-  <div class="container-titolo">
-    <h2 [ngClass]="evidenziato ? 'testoEvidenziato' : '' " (click)="onEvidenziazione()" style="cursor: pointer;">Benvenuti in Cibando</h2>
-    <p class="paragrafo" [ngStyle]="{'background-color': evidenziato == true ? 'yellow' : 'white'}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, consequuntur corrupti iste voluptates omnis ex libero, consequatur quas accusantium, asperiores deserunt exercitationem maxime! Fugiat facilis voluptas animi atque sapiente dolores autem adipisci molestias optio nobis quasi deserunt cupiditate voluptatibus quo sed laudantium tenetur consequatur, possimus error itaque id tempora quia amet ut. Aliquam molestiae explicabo omnis molestias, exercitationem debitis ducimus at maxime expedita totam! Maxime, animi exercitationem? Cumque explicabo quisquam eaque est porro eum, alias facilis debitis tempora, voluptate dolor incidunt doloribus. Asperiores quod labore consequuntur velit dolor maxime repudiandae adipisci error laudantium? Necessitatibus illum vero tenetur illo temporibus, labore eveniet veritatis quisquam accusantium cum doloremque debitis incidunt commodi nostrum, tempore laudantium dolorum sapiente cupiditate corporis autem recusandae numquam nihil voluptatem. Aperiam dolorem esse animi. Quibusdam, voluptas labore optio neque sapiente laborum quisquam exercitationem hic a dolorem reiciendis eos totam quam, voluptatibus distinctio provident debitis ipsam nihil nam doloribus nulla tempore, nisi temporibus? Ullam amet qui porro assumenda reprehenderit quos asperiores repellendus eum saepe, tenetur et officia quis nam nobis. Quos modi ducimus deleniti, incidunt unde illo totam aliquid dolor voluptatibus illum velit labore laboriosam quo, obcaecati rem. Porro ab, veritatis illo maxime quod nostrum. Quis facilis error aperiam magnam!</p>
-  </div>
-</div>
-
-
+<app-header></app-header>
+<app-home></app-home>
+<app-footer></app-footer>
 <!-- <div id="contenitore-switch" [ngSwitch]="colore" >
   <div *ngSwitchCase="'verde'"[style]="'background:' + colore">compare se il colore é VERDE </div>
   <div *ngSwitchCase="'blu'" [style]="'background:' + colore">compare se il colore é BLU</div>

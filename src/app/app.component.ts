@@ -16,10 +16,6 @@ export class AppComponent {
 
   colore = "green";
 
-  evidenziato = false;
 
-  onEvidenziazione() {
-    this.evidenziato = !this.evidenziato;
-  }
 
 }
