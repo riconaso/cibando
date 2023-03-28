@@ -1,0 +1,27 @@
+@import "../../../../styles/colors.scss";
+
+.ricetta-img{
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.titolo-ricetta{
+  margin-top: 50px;
+}
+
+.ricetta-difficolta{
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.titolo-ricetta{
+  font-family:'Courier New', Courier, monospace ;
+  font-size: 50px;
+  color: $primary-color-1;
+}
+
+.ricetta-data{
+  text-align: end;
+}

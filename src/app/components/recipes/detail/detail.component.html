@@ -1,0 +1,15 @@
+<div class="detail-container ">
+  <div class="ricetta-img" [ngStyle]="{'background-image': 'url(' +ricetta.image +')'}"></div>
+  <div >
+    <h3 class="titolo-ricetta">{{ricetta.title}}</h3>
+  </div>
+  <div >
+    <p class="ricetta-descrizione">{{ricetta.description}}</p>
+  </div>
+  <div >
+    <p class="ricetta-difficolta">Difficoltà {{ricetta.difficulty}}</p>
+  </div>
+  <div >
+    <p class="ricetta-data">Data pubblicazione:{{ricetta.date}}</p>
+  </div>
+</div>
