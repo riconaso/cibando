@@ -25,3 +25,14 @@
 .ricetta-data{
   text-align: end;
 }
+
+.difficolta {
+  width: 150px;
+}
+
+div#ricetta_non_trovata{
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

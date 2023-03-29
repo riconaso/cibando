@@ -11,6 +11,8 @@ import { RecipeService } from 'src/app/services/recipe.service';
 export class RecipesListComponent implements OnInit {
   // SENZA IL MODELLO AVREMMO SCRITTO ricette: any[] anzichè ricette: Recipe[]. Quindi togliere anche l'import di modello da sopra
   ricette: Recipe[];
+  titoloRicetta: string;
+
 
   //INJECTON SEMPRE NEL COSTRUTTORE
   constructor(private recipeService: RecipeService){}
@@ -27,6 +29,16 @@ export class RecipesListComponent implements OnInit {
       }
     })
   }
+
+  riceviMessaggio(e: any){
+    if(this.titoloRicetta == e){
+      this.titoloRicetta = ''
+    } else{
+      this.titoloRicetta = e
+    }
+   // this.titoloRicetta == e ? this.titoloRicetta = '' : this.titoloRicetta = e;
+  }
+
 
 }
 

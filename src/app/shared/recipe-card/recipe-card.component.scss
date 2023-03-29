@@ -7,7 +7,8 @@
   margin-bottom: 20px;
 
   .card{
-    border-radius: 10px !important;
+    border-radius: 0.9rem !important;
+    height: 465px!important;
 
   }
 
@@ -21,16 +22,20 @@
 
   .card-body{
     text-align: center;
+
     .card-title{
       font-weight: 900;
       font-size: 20px;
       color: $primary-color-1;
-      margin: 2px;
+      margin: 3px;
+      height: 50px;
     }
 
     .card-text{
       text-align: justify;
       margin: 0 0 30px;
+      height: 146px!important;
+
     }
 
     a.btn.btn-primary {

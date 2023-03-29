@@ -10,7 +10,8 @@ import { RecipeService } from 'src/app/services/recipe.service';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit{
-ricetta: Recipe;
+  percorsoStelline = "../../../../assets/images/difficolta-";
+  ricetta: Recipe;
 
   constructor(
     private activatedRoute: ActivatedRoute,
