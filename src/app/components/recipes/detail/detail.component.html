@@ -14,8 +14,10 @@
     <!-- <div >
       <p class="ricetta-difficolta">Difficoltà {{ricetta.difficulty}}</p>
     </div> -->
-    <div class="ricetta-date">
-      <p>Ricetta pubblicata in data {{ricetta.date | date: 'longDate'}}</p>
+    <div class="row">
+      <strong>Data:</strong>
+      {{ricetta.date | date: 'long'}}
+      {{ricetta.date}}
     </div>
   </div>
 </div>

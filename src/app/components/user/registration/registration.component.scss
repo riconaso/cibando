@@ -1,0 +1,113 @@
+// @import"../../../styles/colors.scss";
+
+
+
+.mat-icon {
+  -webkit-user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 66px;
+  width: 30px;
+  overflow: hidden;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem -12.25rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 21.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+// button.btn.btn-primary.btn-lg {
+//   background: $primary-color-1;
+//   border: none;
+//   color: black;
+// }
+
+// input.ng-valid.ng-touched{
+//   border: 1px solid rgb(77,169,80);
+// }
+
+// input.ng-valid.ng-touched{
+//   border: 1px solid rgb(77,169,80);
+// }
+
+// input.ng-invalid.ng-touched{
+//   border: 1px solid rgb(218, 25, 25);
+// }
+
+// p.help.is-danger{
+//   margin-top: -13px;
+//   color:rgb(191, 27, 27);
+//   font-size: 12px;
+//   font-weight: 600;
+// }
+
+// .colonna-dx{
+//   background-image: url("../../../assets/images/foto-registrazione.jpg");
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: bottom;
+//   border-radius: 0px 25px 25px 0;
+
+// }
+
+// .check{
+//   height: 50px;
+//   width: 70%;
+//   flex-direction: column;
+//   margin-top: 4px;
+// }
+
+@import "../../../../styles/colors.scss";
+
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+input.ng-valid.ng-touched{
+  border: 1px solid rgb(7, 216, 7);
+}
+
+.colonna-dx{
+  background-image: url("../../../../assets/images/foto-registrazione.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  border-radius:  0px 25px 25px 0px;
+}
+.p-md-5 {
+  padding: 1rem !important;
+}
+
+.btn{
+  background-color: $primary-color-1 !important;
+  border: none !important;
+}
+
+p.help.is-danger{
+  margin-top: 10px;
+  color: red;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.check{
+  height: 50px;
+  width: 70%;
+  flex-direction: column;
+  margin-top: 4px;
+}

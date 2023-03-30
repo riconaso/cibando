@@ -43,10 +43,16 @@ html, body { height: 100%; }
   }
 }
 
+.bt-primary{
+  background-color: $primary-color-1!important;
+  font-weight: 700;
+  border: none!important;
+}
 .testoEvidenziato {
   background-color: yellow;
   width: 400px;
 }
+
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
