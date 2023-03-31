@@ -212,10 +212,12 @@
                         <i class=""><mat-icon>vpn_key</mat-icon></i>
                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                          <input type="password" id="form3Example4c" class="form-control" placeholder="Inserisci la password" name="password" formControlName="password"/>
-                          <label class="form-label" for="form3Example4c">Password</label>
+                          <!-- <input type="password" id="form3Example4c" class="form-control" placeholder="Inserisci la password" name="password" formControlName="password"/> -->
+                          <p-password [toggleMask]="true" class="form-control" formControlName="password" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"></p-password>
                           <p class="help is-danger" *ngIf="form.controls.password.hasError('required') && !form.get('password').dirty && form.get('password').touched"> Il campo password è obbligatorio</p>
-                          <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').dirty"> La password deve essere lunga almeno 6 caratteri</p>
+                          <label class="form-label" for="form3Example4c">Password</label>
+                          <!-- <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').dirty"> La password deve essere lunga almeno 6 caratteri</p> -->
+                          <p class="help is-danger" *ngIf="form.controls.password.hasError('pattern')"> Il campo password deve contenere almeno 1 carattere speciale, 1 minuscola, 1 maiuscola, 1 numero ed essere lungo da 8 a 16 caratteri</p>
                         </div>
                       </div>
 
@@ -224,9 +226,12 @@
                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                           <input type="password" id="form3Example4cd" class="form-control" placeholder="Ripeti la password" name="repeatPassword" formControlName="ripetiPassword"/>
+
                           <label class="form-label" for="form3Example4cd">Ripeti la password</label>
                           <p class="help is-danger" *ngIf="form.controls.password.hasError('required') && !form.get('ripetiPassword').dirty && form.get('ripetiPassword').touched"> Il campo password è obbligatorio</p>
                           <p class="help is-danger" *ngIf="!form.get('ripetiPassword').valid && form.get('ripetiPassword').dirty"> La password deve essere lunga almeno 6 caratteri</p>
+                          <p class="help is-danger" *ngIf="form.getError('diversa') && form.get('ripetiPassword').touched">Attenzione la password inserita non corrisponde</p>
+
                         </div>
                       </div>
 
