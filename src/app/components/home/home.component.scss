@@ -1,3 +1,4 @@
+@import"../../../styles/colors.scss";
 .container-titolo{
   h2{
     margin-top: 30px;
@@ -16,14 +17,76 @@
 
 }
 
-div#ultimeRicette{
-  margin-top: 50px;
-  text-align: center;
-h2{
+// div#ultimeRicette{
+//   margin-top: 50px;
+//   text-align: center;
+// h2{
 
-  margin-bottom: 10px;
+//   margin-bottom: 10px;
+// }
+// }
+
+// div#dati-utente{
+//   background: white;
+//   width: 60%;
+//   height: 315px;
+//   border: 5px solid red;
+//   border-radius: 30px;
+//   padding: 16px;
+// }
+
+// div#container-utente{
+//   background: #00000000;
+//   width: 100%;
+//   height: 100vh;
+//   position:absolute;
+//   display: flex;
+//   flex-wrap: nowrap;
+//   justify-content: center;
+//   align-items: center;
+//   top: 0px;
+//   z-index: 10;
+// }
+
+div#container-utente {
+  background: #000000b0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  z-index: 10;
+
+  div#dati-utente {
+    background: white;
+    width: 60%;
+    height: 250px;
+    border: 5px solid $primary-color-1;
+    border-radius: 30px;
+    padding: 16px;
+
+    h2 {
+      font-size: 23px!important;
+      text-align: center;
+    }
+
+    ul {
+      height: 90px;
+      margin-top: 33px;
+      font-size: 18px;
+      li {
+        line-height: 40px;
+      }
+    }
+
+    button.btn.btn-primary.btn-lg {
+      width: 50%;
+      margin-left: 25%;
+      background-color: $primary-color-1;
+    }
+  }
 }
-}
-
-
 

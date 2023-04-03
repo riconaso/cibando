@@ -2,6 +2,8 @@ import { formatPercent } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'; //per il form react
 import { CustomValidator } from '../customValidator';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -9,6 +11,9 @@ import { CustomValidator } from '../customValidator';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
+
+  constructor (private userService: UserService, private router: Router){}
+
 
 form = new FormGroup({
   name: new FormControl('', Validators.required), //Le virgolette sono il valore di default che possiamo dare al campo //VALIDATORS, VALIDATORS COMPOS PIù VALIDAZIONI RACCHIUDERE DA []
@@ -25,7 +30,15 @@ form = new FormGroup({
   // }
 
   onSubmit(){
-    console.log(this.form.value);
+   // console.log(this.form.value);
+   const user = {
+    name: this.form.value.name,
+    email: this.form.value.email
+   }
+
+   this.userService.datiUtente.next(user);
+
+   this.router.navigate(['home']);
   }
 
 }
