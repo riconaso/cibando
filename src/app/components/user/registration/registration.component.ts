@@ -38,7 +38,7 @@ form = new FormGroup({
 
    this.userService.datiUtente.next(user);
 
-   this.router.navigate(['home']);
+   //this.router.navigate(['home']);
   }
 
 }
