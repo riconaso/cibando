@@ -61,6 +61,7 @@ paginate(event){
   this.page = event.page;
 }
 
+}
 // prendiRicetteHome(){
 //   this.recipeService.getRecipes().subscribe({
 //     next: (response) => {
@@ -81,5 +82,4 @@ paginate(event){
 //     this.prendiRicette();
 //   }
 // }
-}
 // @ si dice decorare o meglio decoratore
