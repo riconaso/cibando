@@ -5,6 +5,7 @@ import { CustomValidator } from '../customValidator';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-registration',
@@ -12,6 +13,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
+
+  utenteInserito: any;
 
   constructor (private userService: UserService, private router: Router, private modalService: NgbModal){}
 
@@ -31,14 +34,20 @@ form = new FormGroup({
   // }
 
   onSubmit(){
-   // console.log(this.form.value);
-   const user = {
-    name: this.form.value.name,
-    email: this.form.value.email
-   }
 
-   this.userService.datiUtente.next(user);
-   this.router.navigate(['home']);
+    const user = this.form.value;
+    this.userService.insertUser(user).pipe(take(1)).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.utenteInserito = res;
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+
+    this.userService.datiUtente.next(user);
+    this.router.navigate(['home'])
   }
 
   open(content: any, titolo?: string){

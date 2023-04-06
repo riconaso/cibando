@@ -17,12 +17,6 @@ export class NewRecipeComponent {
   published: boolean;
   difficulty: number;
 
-  constructor(
-    private recipeService: RecipeService,
-    private modal: NgbModal,
-    private router: Router,
-  ) {}
-
   form = new FormGroup({
     title: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
@@ -31,58 +25,63 @@ export class NewRecipeComponent {
     difficulty: new FormControl('1', [Validators.required, Validators.min(1), Validators.max(5)]),
   });
 
-  ngOnInit(): void {
-    this.prendiDatiRicetta();
-  }
-
-  onSubmit():void {
-    const recipe = {
-      title: this.form.value.title,
-      description: this.form.value.description,
-      image: this.form.value.image,
-      published: this.form.value.published,
-      difficulty: this.form.value.difficulty
+  constructor(
+    private recipeService: RecipeService,
+    private modal: NgbModal,
+    private router: Router,
+    ) {}
+    ngOnInit(): void {
+      this.prendiDatiRicetta();
     }
-    this.recipeService.insertRecipe(recipe).subscribe(res => {
-      console.log('response is', res)
-    })
 
-    this.recipeService.datiRicetta.next(recipe);
+    onSubmit():void {
+      const recipe = {
+        title: this.form.value.title,
+        description: this.form.value.description,
+        image: this.form.value.image,
+        published: this.form.value.published,
+        difficulty: this.form.value.difficulty
+      }
+      this.recipeService.insertRecipe(recipe).subscribe(res => {
+        console.log('response is', res)
+      })
+
+      this.recipeService.datiRicetta.next(recipe);
+
+    }
+
+    prendiDatiRicetta() {
+      this.recipeService.datiRicetta.subscribe((res: any) => {
+        this.title = res.title;
+        this.description = res.description;
+        this.image = res.image;
+        this.published = res.published;
+        this.difficulty = res.difficulty;
+      })
+    }
+
+    closeModal() {
+      this.title = '';
+      this.description = '';
+      this.image = '';
+      this.published = false;
+      this.difficulty = null;
+
+
+
+    }
+
+
+    open(content: any, titolo?: string) {
+      let title = titolo;
+      this.modal.open(content, { ariaLabelledBy: 'modale servizi', size: 'lg', centered: true}).result.then((res) => {
+        // console.log('Azione da eseguire' + title)
+        this.router.navigate(['new-recipe']);
+
+      }).catch((res) => {
+        // console.log('Nessuna azione da eseguire')
+        this.router.navigate(['ricette']);
+      });
+    }
 
   }
-
-  prendiDatiRicetta() {
-    this.recipeService.datiRicetta.subscribe((res: any) => {
-      this.title = res.title;
-      this.description = res.description;
-      this.image = res.image;
-      this.published = res.published;
-      this.difficulty = res.difficulty;
-    })
-  }
-
-  closeModal() {
-    this.title = '';
-    this.description = '';
-    this.image = '';
-    this.published = false;
-    this.difficulty = null;
-
-
-
-  }
-
-
-  open(content: any, titolo?: string) {
-    let title = titolo;
-    this.modal.open(content, { ariaLabelledBy: 'modale servizi', size: 'lg', centered: true}).result.then((res) => {
-      // console.log('Azione da eseguire' + title)
-      this.router.navigate(['new-recipe']);
-
-    }).catch((res) => {
-      // console.log('Nessuna azione da eseguire')
-      this.router.navigate(['ricette']);
-    });
-  }
-
-}
