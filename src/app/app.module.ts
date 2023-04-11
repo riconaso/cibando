@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule} from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
+import { ToastModule} from 'primeng/toast';
+
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
@@ -23,6 +25,7 @@ import { RegistrationComponent } from './components/user/registration/registrati
 import { NewRecipeComponent } from './components/recipes/new-recipe/new-recipe.component';
 import { ChangeColorDirective } from './directives/change-color.directive';
 import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 
 @NgModule({
@@ -39,7 +42,8 @@ import { EsempioCombineComponent } from './components/esempio-combine/esempio-co
     RegistrationComponent,
     NewRecipeComponent,
     ChangeColorDirective,
-    EsempioCombineComponent
+    EsempioCombineComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -54,6 +58,7 @@ import { EsempioCombineComponent } from './components/esempio-combine/esempio-co
     DividerModule,
     PaginatorModule,
     HttpClientModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

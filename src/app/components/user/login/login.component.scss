@@ -1,0 +1,39 @@
+@import"../../../../styles/colors.scss";
+
+.container-form {
+  width: 45%;
+  margin: 9% 33%;
+  border: 2px solid $primary-color-1;
+  border-radius: 15px;
+}
+
+input.form-login {
+  width: 50%;
+  margin-left: 2%;
+  margin-top: 3%;
+}
+h5.text-fra {
+  margin-left: 47%;
+  font-size: 15px;
+}
+
+.input-form {
+  margin-top: 27px;
+  margin-left: 25px;
+  font-size: 20px;
+}
+
+.button.d-flex.justify-content-center {
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+}
+
+.allert.ng-star-inserted {
+  text-align: center;
+  font-size: 17px;
+  color: red;
+}
+.entra{
+  border-color: $primary-color-1!important;
+}

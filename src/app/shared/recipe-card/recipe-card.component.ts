@@ -3,10 +3,13 @@ import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Router } from '@angular/router';
 import { Observable, first, take, map} from 'rxjs';
+import { UserService } from 'src/app/services/user.service';
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
-  styleUrls: ['./recipe-card.component.scss']
+  styleUrls: ['./recipe-card.component.scss'],
+  providers: [MessageService]
 })
 export class RecipeCardComponent implements OnInit, OnDestroy {
 
@@ -19,42 +22,57 @@ page = 1;
 ricettePerPagina = 4;
 
 //il dollaro nelle variabili mi rappresenta una variabile asincrona
-recipes$: Observable<Recipe[]> = this.recipeService.getRecipes().pipe(
+recipes$ = this.recipeService.getRecipes().pipe(
 // map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),
-map(res => this.ricette = res)
+map(res => {
+  this.ricette = res;
+  if(res){
+    this.messageService.add({severity:'success', summary:'completato', detail:'ricetta caricata correttamente'})
+  }
+})
 );
 
 ricette: Recipe[];
 
+ruolo: any;
+
 
 constructor(
   private recipeService: RecipeService,
-  private router: Router){}
+  private router: Router,
+  private userService: UserService,
+  private messageService: MessageService){}
 
 ngOnInit(): void {
-   this.prendiRicette();
+   //this.prendiRicette();
   //this.metodino();
+  if(JSON.parse(localStorage.getItem('user')) != null){
+    this.userService.userRole.subscribe({
+      next: res => this.ruolo = res
+    })
+  }
+
 }
 
 ngOnDestroy(): void {
   console.log('utente uscito dal componente')
 }
-prendiRicette(){
-  this.recipeService.getRecipes().pipe(first()).subscribe({
-    next: (res) =>{
-      this.recipes = res;
+// prendiRicette(){
+//   this.recipeService.getRecipes().pipe(first()).subscribe({
+//     next: (res) =>{
+//       this.recipes = res;
 
-      if(this.pag){
-        this.recipes = this.recipes.sort((a,b) => b._id - a._id).slice(0,4);
-      }
-      this.ricetteTotali = res.length;
-    },
-    error: (error) =>{
-      console.log(error)
-    }
-  })
+//       if(this.pag){
+//         this.recipes = this.recipes.sort((a,b) => b._id - a._id).slice(0,4);
+//       }
+//       this.ricetteTotali = res.length;
+//     },
+//     error: (error) =>{
+//       console.log(error)
+//     }
+//   })
 
-}
+// }
 
 inviaTitolo(titolo: string){
   this.messaggio.emit(titolo);

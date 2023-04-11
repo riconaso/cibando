@@ -8,6 +8,7 @@ import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { NewRecipeComponent } from './components/recipes/new-recipe/new-recipe.component';
 import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
+import { LoginComponent } from './components/user/login/login.component';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -18,9 +19,11 @@ const routes: Routes = [
   ]},
 
   {path:'registrazione', component: RegistrationComponent},
+  { path: 'login', component: LoginComponent},
   { path: 'combine', component: EsempioCombineComponent},
   {path: '**', redirectTo: 'home'}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],

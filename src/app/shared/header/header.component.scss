@@ -3,9 +3,33 @@
   width: 20px;
   font-size: 21px;
   padding-top: 2px;
+  color: white;
 }
 
 .icona-cibando{
   width: 60px;
   margin-right: 5px;
+}
+
+li.nav-item.user {
+  margin-left: 60px;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 0px 20px;
+
+}
+
+span.name {
+  color: white;
+}
+
+
+a.nav-link {
+  display: inline-block;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+  justify-content: flex-end;
 }
