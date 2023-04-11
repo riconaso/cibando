@@ -1,0 +1,36 @@
+
+
+<ng-template [ngIf]="gruppiCombinati$ | async ">
+
+  <div>
+    <h3 class="titolo">Clienti</h3>
+   <ul>
+    <li class="clienti" *ngFor="let cliente of gruppi[0]">
+      {{cliente.name || cliente }}
+    </li>
+   </ul>
+  </div>
+
+  <div>
+    <h3 class="titolo">Rivenditori</h3>
+   <ul>
+    <li class="clienti" *ngFor="let cliente of gruppi[1]">
+      {{cliente.name || cliente }}
+    </li>
+   </ul>
+  </div>
+
+
+  <div>
+    <h3 class="titolo">Marche</h3>
+   <ul>
+    <li class="clienti"*ngFor="let cliente of gruppi[2]">
+      {{cliente.name || cliente }}
+    </li>
+   </ul>
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="caricamento">
+<img src="../../../assets/images/dribbble.gif">
+</ng-template>

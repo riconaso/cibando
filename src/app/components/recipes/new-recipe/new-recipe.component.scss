@@ -1,4 +1,4 @@
-@import "../../../styles/colors.scss";
+@import "../../../../styles/colors.scss";
 
 
 input.ng-invalid.ng-touched{
@@ -10,7 +10,7 @@ input.ng-valid.ng-touched{
 }
 
 .colonna-dx{
-   background-image: url("../../../assets/images/foto-registrazione.jpg");
+   background-image: url("../../../../assets/images/foto-registrazione.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius:  0px 25px 25px 0px;

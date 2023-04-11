@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, OnDestroy } from '@angu
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Router } from '@angular/router';
-import { first, take } from 'rxjs';
+import { Observable, first, take, map} from 'rxjs';
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
@@ -18,6 +18,15 @@ ricetteTotali: number;
 page = 1;
 ricettePerPagina = 4;
 
+//il dollaro nelle variabili mi rappresenta una variabile asincrona
+recipes$: Observable<Recipe[]> = this.recipeService.getRecipes().pipe(
+// map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),
+map(res => this.ricette = res)
+);
+
+ricette: Recipe[];
+
+
 constructor(
   private recipeService: RecipeService,
   private router: Router){}
@@ -31,11 +40,7 @@ ngOnDestroy(): void {
   console.log('utente uscito dal componente')
 }
 prendiRicette(){
-  this.recipeService.getRecipes()
-  .pipe(
-    first()
-  )
-  .subscribe({
+  this.recipeService.getRecipes().pipe(first()).subscribe({
     next: (res) =>{
       this.recipes = res;
 

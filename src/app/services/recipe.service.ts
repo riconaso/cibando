@@ -16,12 +16,16 @@ export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
-  getRecipes(): Observable<Recipe[]> {
-   // return of (RECIPES);
-   return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`)
-  }
+  // getRecipes(): Observable<Recipe[]> {
+  //  // return of (RECIPES);
+  //  return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`)
+  // }
+  getRecipes(){
+    // return of (RECIPES); con il mock
+    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`)
+   }
 
-  getRecipe(id: string): Observable<Recipe> { //numeber con il mock, string con il database perchè è autogenerato
+  getRecipe(id: string): Observable<Recipe> { //number con il mock, string con il database perchè è autogenerato
     // const recipe = RECIPES.find(ricetta => ricetta._id === id);//COSI PèERCHE STIAMO LAVORANDO CON IL MOCK
     // return of (recipe);
     return this.http.get<Recipe>(`${this.apiBaseUrl}/${id}`)

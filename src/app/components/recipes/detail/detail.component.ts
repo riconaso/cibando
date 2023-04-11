@@ -23,7 +23,7 @@ ngOnInit(): void {
   this.onGetRecipe();
 }
 
-  //SNAPSHOT PARMAMAP
+  //SNAPSHOT PARMAMAP Con il mock prima del this NUmber e si circonda dalle tonde
   onGetRecipe(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('_id');
     this.recipeService.getRecipe(id).subscribe({
@@ -37,7 +37,9 @@ ngOnInit(): void {
     })
   }
 
-  //PARAMS
+
+
+  //PARAMS con il moch dopo const id) Number e si circonda dalle tonde
   onGetRecipe2(): void {
     this.activatedRoute.params.subscribe((parametriUrl) => {
       const id = parametriUrl['_id'];
