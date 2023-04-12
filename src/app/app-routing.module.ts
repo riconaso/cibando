@@ -9,17 +9,21 @@ import { RegistrationComponent } from './components/user/registration/registrati
 import { NewRecipeComponent } from './components/recipes/new-recipe/new-recipe.component';
 import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { LoggedInGuard } from './logged-in.guard';
+
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'ricette', component: RecipesComponent, children: [
     {path: 'dettaglio/:title/:_id', component: DetailComponent},
-     {path: 'new-recipe', component: NewRecipeComponent},
+    {path: 'new-recipe', component: NewRecipeComponent},
     {path: '', pathMatch: 'full', component: RecipesListComponent }
   ]},
 
   {path:'registrazione', component: RegistrationComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'profilo', component: ProfileComponent, canActivate: [LoggedInGuard]},
   { path: 'combine', component: EsempioCombineComponent},
   {path: '**', redirectTo: 'home'}
 ];

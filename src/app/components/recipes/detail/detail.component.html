@@ -5,7 +5,8 @@
       <h3 class="titolo-ricetta">{{ricetta.title}}</h3>
     </div>
     <div >
-      <p class="ricetta-descrizione">{{ricetta.description}}</p>
+      <!-- <p class="ricetta-descrizione">{{ricetta.description}}</p> -->
+      <span [innerHTML]="ricetta.description"></span>
     </div>
     <div class="row">
       <strong>difficoltà:</strong>

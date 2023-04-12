@@ -141,4 +141,30 @@ html, body { height: 100%; }
   border: 1px solid #767575 !important;
   margin-left: 6% !important;
 }
+
+.descrizione-ricetta .ck-editor__editable {
+  min-height: 200px!important;
+  max-height: 200px!important;
+  max-width: 440px!important;
+}
+
+.descrizione-note .ck-editor__editable {
+  min-height: 200px!important;
+  max-height: 50px!important;
+  max-width: 380px!important;
+
+}
+
+.descrizione-note .ck-sticky-panel__content{
+  max-width: 390px!important;
+  margin-left: 50px;
+}
+
+.descrizione-ricetta .ck-sticky-panel__content{
+  max-width: 380px!important;
+}
+
+ckeditor.descrizione-note.ng-untouched.ng-pristine.ng-invalid {
+    margin-left: 50px;
+}
 @import 'bootstrap/scss/bootstrap';

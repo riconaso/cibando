@@ -15,17 +15,20 @@
             <a class="nav-link" routerLink="ricette"><mat-icon>restaurant</mat-icon>Ricette</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" ><mat-icon>contacts</mat-icon>Contatti</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" routerLink="/ricette/new-recipe" ><mat-icon>add</mat-icon>Nuova Ricetta</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" ><mat-icon>contacts</mat-icon>Contatti</a>
+          </li>
+
 
           <li class="nav-item user" *ngIf="!authService.isLogged()">
             <a class="nav-link" routerLink="login" ><mat-icon>person</mat-icon>Accedi</a>
           </li>
+
           <li class="nav-item" *ngIf="authService.isLogged()">
             <mat-icon>person</mat-icon> <span class="name">Ciao {{user.name}}</span>
+            <a class="nav-link" routerLink="profilo"> - PROFILO</a>
             <a class="nav-link" (click)="logout()" > - ESCI</a>
           </li>
         </ul>

@@ -24,7 +24,7 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <textarea name="description" id="description" cols="30" rows="10" class="form-control" placeholder="Descrivi la tua ricetta"  formControlName="description"></textarea>
+                        <ckeditor [editor]="Editor" [config]="editorConfig"  class="descrizione-ricetta" placeholder="Descrivi la tua ricetta"  formControlName="description"></ckeditor>
                         <label class="form-label" for="form3Example3c">Descrizione</label>
                         <!-- <p class="help is-danger" *ngIf="form.controls.email.hasError('required') && form.get('email').touched">Il campo email è obbligatorio</p>
                         <p class="help is-danger" *ngIf="form.controls['email'].hasError('email') && form.get('email').dirty && form.get('email').touched">Il campo email non contiene una email valida</p> -->
