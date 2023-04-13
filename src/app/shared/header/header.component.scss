@@ -33,3 +33,16 @@ a.nav-link {
   flex-basis: auto;
   justify-content: flex-end;
 }
+
+.search{
+  width: max-content;
+  height: max-content;
+  background-color: transparent;
+  border: none;
+}
+
+input.search-form {
+  margin-right: 15px;
+  margin-left: 15px;
+  height: 25px;
+}

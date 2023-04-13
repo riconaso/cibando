@@ -6,12 +6,14 @@ import { RecipesComponent } from './recipes.component';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { DetailComponent } from './detail/detail.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
+import { ResultComponent } from './result/result.component';
 
 const routes: Routes = [
   {path: '', component: RecipesComponent, children: [
-    {path: 'recipes', component: RecipesListComponent},
+
     {path: 'dettaglio/:title/:_id', component: DetailComponent},
     {path: 'new-recipe', component: NewRecipeComponent, canActivate:[LoggedInGuard]},
+    {path: 'cerca/:text', component: ResultComponent},
     {path: '', pathMatch: 'full', component: RecipesListComponent }
   ]},
 ];

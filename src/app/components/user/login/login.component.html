@@ -1,6 +1,6 @@
 <div class="container">
   <div class="container-form">
-    <form class="form" #logForm = "ngForm" (ngSubmit)="onSubmit(logForm.value)">
+    <form class="form" #logForm ="ngForm" (ngSubmit)="onSubmit(logForm.value)">
       <div class="input-form">
       <label class="form-label" for="email">La tua email</label>
       <input type="email"  class="form-login" placeholder="Scrivi la tua email" name="email" ngModel />
@@ -21,6 +21,6 @@
 
   </div>
 </div>
-<h5 class="text-fra">Se non sei ancora registrato, <a routerLink="/registrazione" >Registrati</a> </h5>
+<h5 class="text-fra">Se non sei ancora registrato, <a routerLink="/user/registrazione" >Registrati</a> </h5>
 
 <p-toast position="bottom-right"></p-toast>

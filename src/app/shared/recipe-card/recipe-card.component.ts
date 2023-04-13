@@ -20,16 +20,48 @@ recipes: Recipe[];
 ricetteTotali: number;
 page = 1;
 ricettePerPagina = 4;
+ricercato: any;
 
 //il dollaro nelle variabili mi rappresenta una variabile asincrona
+// recipes$ = this.recipeService.getRecipes().pipe(
+// // map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),
+// map(res => {
+//   this.ricette = res;
+//   if(res){
+//     this.messageService.add({severity:'success', summary:'completato', detail:'ricetta caricata correttamente'})
+//   }
+// })
+// );
+
 recipes$ = this.recipeService.getRecipes().pipe(
-// map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),
-map(res => {
-  this.ricette = res;
-  if(res){
-    this.messageService.add({severity:'success', summary:'completato', detail:'ricetta caricata correttamente'})
-  }
-})
+  map(response => {
+    if(this.pag === 'ricerca') {
+      this.recipeService.testoCercato.subscribe({
+        next: (res) => {
+          if(this.ricercato) {
+            this.recipeService.findRecipes(this.ricercato).subscribe({
+              next: (res) => {
+                this.ricette = res;
+                console.log(res);
+              },
+              error: (err) => {
+                console.log(err);
+              }
+            })
+          }
+          this.ricercato = res;
+        },
+        error: (err) => {
+          console.error(err);
+        }
+      });
+    } else {
+      this.ricette = response;
+      if(response) {
+        this.messageService.add({severity: 'success', summary:'Completato', detail: 'Ricette caricate correttamente', life: 3000})
+      }
+    }
+  }),
 );
 
 ricette: Recipe[];

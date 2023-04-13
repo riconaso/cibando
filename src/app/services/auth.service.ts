@@ -21,6 +21,7 @@ ApiBaseUrl = 'api/users';
       name: res.name,
       email: res.email,
       password: res.password,
+
     }
 
     this.userService.userRole.next(res.role);
@@ -29,6 +30,7 @@ ApiBaseUrl = 'api/users';
 
   isLogged(): boolean {
     return JSON.parse(localStorage.getItem('user')) !== null;
+
   }
 
   logout(): void{
