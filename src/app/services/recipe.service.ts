@@ -38,7 +38,7 @@ export class RecipeService {
   }
 
   findRecipes(text: string): Observable<any>{
-    return this.http.get<any>(`${this.apiBaseUrl}/cerca/${text}`);
+    return this.http.get<any>(`${this.apiBaseUrl}/cerca/${text}`); //tra le parentesi tonde si chiama Query Params
   }
 }
 

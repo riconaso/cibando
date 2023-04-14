@@ -3,5 +3,9 @@
   <div id="msg">
     <h3 *ngIf="titoloRicetta">{{titoloRicetta}}</h3>
   </div>
-  <app-recipe-card (messaggio)="riceviMessaggio($event)"></app-recipe-card>
+  <!-- app si chiama selettore  -->
+  <app-recipe-card (messaggio)="riceviMessaggio($event)">
+    <div>Ecco il contenuto passato dal padre</div>
+    <p secondaIncursione>Titolo Ricetta: {{titoloRicetta}}</p>
+   </app-recipe-card>
 </div>
