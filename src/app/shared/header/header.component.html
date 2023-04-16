@@ -14,7 +14,7 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="ricette"><mat-icon>restaurant</mat-icon>Ricette</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="authService.isLogged() && this.user.role == 'admin'">
             <a class="nav-link" routerLink="/ricette/new-recipe" ><mat-icon>add</mat-icon>Nuova Ricetta</a>
           </li>
           <li class="nav-item">

@@ -22,6 +22,7 @@ page = 1;
 ricettePerPagina = 4;
 ricercato: any;
 
+
 //il dollaro nelle variabili mi rappresenta una variabile asincrona
 // recipes$ = this.recipeService.getRecipes().pipe(
 // // map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),
@@ -79,9 +80,7 @@ ngOnInit(): void {
    //this.prendiRicette();
   //this.metodino();
   if(JSON.parse(localStorage.getItem('user')) != null){
-    this.userService.userRole.subscribe({
-      next: res => this.ruolo = res
-    })
+   this.ruolo = JSON.parse(localStorage.getItem('user')).role;
   }
 
 }
